@@ -6,13 +6,15 @@ const Connection = () => {
   mongoose.connect(url, { useNewUrlParser: true });
 
   mongoose.connection.on("connected", () => {
-    console.log(" Database Connected Successfully ohhoooo!!");
+    console.log("Database Connected Successfully ohhoooo!!");
   });
+
   mongoose.connection.on("disconnected", () => {
     console.log("Database Disconnected");
   });
+
   mongoose.connection.on("error", () => {
-    console.log("Error --->");
+    console.log("Error --->", error);
   });
 };
 
